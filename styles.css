@@ -55,6 +55,8 @@ button:hover {
     width: 480px;
 }
 
+.grid:hover { cursor: crosshair; }
+
 .cell {
     /* width: 30px;
     height: 30px; */
@@ -66,3 +68,31 @@ button:hover {
     display: flex;
     justify-content: space-between;
 }
+
+.color-container {
+    display: flex;
+    justify-content: space-between;
+    height: auto;
+    gap: 20px;
+}
+
+.color {
+    width: 50px;
+    height: 50px;
+    box-sizing: border-box;
+    transition: 0.1s;
+}
+.color:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    /* border: 2px solid black; */
+}
+
+.color#red { background: red; }
+.color#green { background: green; }
+.color#blue { background: blue; }
+.color#yellow { background: rgb(188, 188, 4); }
+.color#green { background: green; }
+.color#purple { background: purple; }
+.color#pink { background: rgb(255, 69, 100); }
+.color#black { background: rgb(0, 0, 0); }
