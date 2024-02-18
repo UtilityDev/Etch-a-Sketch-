@@ -7,5 +7,11 @@ function createGrid(size) {
         grid.appendChild(cell);
     }
 }
-
 createGrid(16);
+
+let cells = document.querySelectorAll('.cell');
+cells.forEach((cell) => {
+    cell.addEventListener('mouseover', () => {
+        cell.style.backgroundColor = '#666666';
+    });
+});
