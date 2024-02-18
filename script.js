@@ -1,9 +1,10 @@
 let grid = document.querySelector('.grid');
 
 const resizeBtn = document.querySelector('#resize-btn');
+const rainbowBtn = document.querySelector('#rainbow-btn');
 
 const maxGridSize = 64;
-
+let rainbowMode = false;
 let cells = [];
 
 function createGrid(size) {
@@ -21,7 +22,11 @@ function draw() {
     cells = document.querySelectorAll('.cell')
     cells.forEach((cell) => {
         cell.addEventListener('mouseover', () => {
-            cell.style.backgroundColor = '#666666';
+            if (rainbowMode) {
+                cell.style.backgroundColor = `rgb(${Math.floor(Math.random()*255)},${Math.floor(Math.random()*255)},${Math.floor(Math.random()*255)})`;
+            } else {
+                cell.style.backgroundColor = '#666666';
+            }
         });
     });
 }
@@ -37,4 +42,8 @@ resizeBtn.addEventListener('click', () => {
         createGrid(size);
         draw();
     }
+});
+
+rainbowBtn.addEventListener('click', () => {
+    rainbowMode = !rainbowMode;
 });
